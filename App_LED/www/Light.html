@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="img-src * data:; default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Light</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/but.css" rel="stylesheet" type="text/css"/>
+    <link href="css/button_style.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="Light" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <p><div id="hello">Hello</div></p>
+                <a id="lightness">光照度</a>
+                <a id="temperature">溫溼度</a>
+                <a id="logout">登出</a>
+            </div>
+            <div>
+                <span onclick="openNav()" id="bar">≡</span>
+                <h3 id="tit">燈具功能選單</h3>
+            </div>
+        </div>
+            <div role="main" class="ui-content">
+                <div class="ui-field-contain">
+                    <label for="which_LED">燈具</label>           <!--燈具選擇-->
+                    <select id="which_LED">
+                        <option value="option1">廚房</option>
+                        <option value="option2">客廳</option>
+                    </select>
+                </div>
+
+                <div class="ui-field-contain" style="flex-direction:row">
+                    <div>
+                        <label for="I_O">開關</label>
+                        <select name="I_O" data-role="slider" id="I_O">
+                            <option value="0">Off</option>
+                            <option value="1">On</option>
+                        </select>
+                    </div>
+                </div>
+                <form>
+                    <fieldset data-role="controlgroup" data-type="horizontal" id="Mode">
+                        <legend>人因照明</legend>
+                        <input type="radio" name="radio-mode" id="rad_sleep" value="1">
+                        <label for="rad_sleep">Sleep</label>
+                        <input type="radio" name="radio-mode" id="rad_work" value="2">
+                        <label for="rad_work">Work</label>
+                        <input type="radio" name="radio-mode" id="rad_read" value="3">
+                        <label for="rad_read">Read</label>
+                        <input type="radio" name="radio-mode" id="rad_play" value="4">
+                        <label for="rad_play">Play</label>
+                    </fieldset>
+                </form>
+                <label for="led_bright">亮度</label>
+                <input id="led_bright" value="50" min="0" max="100" type="range" step="10">
+                <a class="button" id="SendToPi" name="SendToPi" style="color:black">變更</a>
+            </div>
+            <div data-position="fixed" data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-icon="power" class="ui-btn-active">Light</a>
+                        </li>
+                        <li>
+                            <a data-icon="camera" href="camera.html" rel="external">Camera</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+</div>
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/Light.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/user.js"></script>
+    <script>
+        var JdataOfMode = window.localStorage.getItem("M");
+        if (JdataOfMode == 1)
+        {
+            var temp = "#rad_sleep";
+        }
+        else if (JdataOfMode == 2)
+        {
+            var temp = "#rad_work";
+        }
+        else if (JdataOfMode == 3) {
+            var temp = "#rad_read";
+        }
+        else if (JdataOfMode == 4) {
+            var temp = "#rad_play";
+        }
+        $(temp).prop("checked", true);
+        var JdataOfIO = window.localStorage.getItem("I");
+        $("#I_O").attr("value", JdataOfIO);
+        var JB = window.localStorage.getItem("B");
+        $('#led_bright').attr('value', JB);
+    </script>
+</body>
+</html>

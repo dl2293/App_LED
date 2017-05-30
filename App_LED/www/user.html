@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="img-src * data:; default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>User</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/but.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/user.js"></script>
+    <div id="user" data-role="page" >
+        <div data-role="header" data-position="fixed" id="Cam">
+            <h3>會員專區</h3>
+        </div>
+        <div role="main" class="ui-content">
+            <p><div id="hello">Hello</div></p>
+            <a class="ui-btn" id="logout" data-role="button">登出</a>
+        </div>
+        <div data-position="fixed" data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a data-icon="power" href="Light.html" rel="external">Light</a>
+                    </li>
+                    <li>
+                        <a data-icon="camera" href="camera.html" rel="external">Camera</a>
+                    </li>
+                    <li>
+                        <a data-icon="star" href="music.html" rel="external">Music</a>
+                    </li>
+                    <li>
+                        <a data-icon="user" class="ui-btn-active">User</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

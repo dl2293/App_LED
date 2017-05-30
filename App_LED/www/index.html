@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="img-src * data:; default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Login</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/but.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/button_style.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/log.js"></script>
+    <div id="login" data-role="page">
+        <div data-role="header" id="Log">
+            <h3>登入頁面</h3>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="ui-field-contain">
+                <label for="user_id">帳號(Email):</label>
+                <input type="email" name="user_id" id="user_id">
+                <label for="user_pwd">密碼:</label>
+                <input type="password" name="user_pwd" id="user_pwd">
+                <div class="ui-grid-a" style="height:110px">
+                    <div class="ui-block-a" style="height:100%">
+                        <a class="button" id="enter" name="enter" style="color:black">登入</a>
+                    </div>
+                    <div class="ui-block-b" style="height:100%">
+                        <a class="button" id="sign_enter" name="sign_enter" rel="external" href="sign_up.html" style="color:black">註冊</a>
+                    </div>
+                </div>
+             </div>
+         </div>
+    </div>
+</body>
+</html>

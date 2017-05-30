@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="img-src * data:; default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Login</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/but.css" rel="stylesheet" type="text/css"/>
+    <link href="css/button_style.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/sign.js"></script>
+    <div id="sign_up" data-role="page">
+        <div data-role="header"> 
+            <h3>Sign_up</h3>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="ui-field-contain">
+                <label for="lName">姓</label>
+                <input type="text" name="lName" id="lName">
+            </div>
+            <div class="ui-field-contain">
+                <label for="fName">名</label>
+                <input type="text" name="fName" id="fName">
+            </div>
+            <div class="ui-field-contain">
+                <label for="phone">電話</label>
+                <input type="tel" name="phone" id="phone">
+            </div>
+            <div class="ui-field-contain">
+                <label for="address">電子信箱</label>
+                <input type="email" name="address" id="address">
+            </div>
+            <div class="ui-field-contain">
+                <label for="sign_pwd">密碼</label>
+                <input type="password" name="sign_pwd" id="sign_pwd">
+            </div>
+            <div class="ui-grid-a" style="height:95px">
+                <div class="ui-block-a" style="height:100%">
+                    <a class="button" id="signLog" name="signLog" style="color:black">註冊</a>
+                </div>
+                <div class="ui-block-b" style="height:100%">
+                    <a class="button" id="b" name="b" href="index.html" rel="external" style="color:black">回登入畫面</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
